@@ -7,8 +7,10 @@ package conexion;
 
 import java.util.ArrayList;
 import models.Bodega;
+import models.Producto;
 import models.Usuario;
 import providers.BodegaProvider;
+import providers.ProductoProvider;
 import providers.UsuarioProvider;
 
 /**
@@ -31,11 +33,20 @@ public class pruebas {
 
         BodegaProvider y = new BodegaProvider();
         ArrayList d = (ArrayList) y.listarBodegas();
-        for (int i = 0; i < c.size(); i++) {
+        for (int i = 0; i < d.size(); i++) {
             System.out.println(d.get(i).toString());
         }
         Bodega p = y.buscarBodega("ADMIN");
         System.out.println(p.toString());
+        
+        
+        ProductoProvider y1 = new ProductoProvider();
+        ArrayList d1 = (ArrayList) y1.listarProductos();
+        for (int i = 0; i < d1.size(); i++) {
+            System.out.println(d1.get(i).toString());
+        }
+        Producto p1 = y1.buscarProducto("VELA");
+        System.out.println(p1.toString());
     }
 
 }

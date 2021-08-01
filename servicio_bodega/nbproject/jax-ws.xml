@@ -7,6 +7,9 @@
     <service name="servicioBodega">
       <implementation-class>webservice.servicioBodega</implementation-class>
     </service>
+    <service name="servicioProducto">
+      <implementation-class>webservice.servicioProducto</implementation-class>
+    </service>
   </services>
   <clients/>
 </jax-ws>
