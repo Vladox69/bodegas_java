@@ -6,7 +6,9 @@
 package conexion;
 
 import java.util.ArrayList;
+import models.Bodega;
 import models.Usuario;
+import providers.BodegaProvider;
 import providers.UsuarioProvider;
 
 /**
@@ -24,8 +26,16 @@ public class pruebas {
         for (int i = 0; i < c.size(); i++) {
             System.out.println(c.get(i).toString());
         }
-        Usuario a=x.buscarUsuario("GUA");
+        Usuario a = x.buscarUsuario("GUA");
         System.out.println(a.toString());
+
+        BodegaProvider y = new BodegaProvider();
+        ArrayList d = (ArrayList) y.listarBodegas();
+        for (int i = 0; i < c.size(); i++) {
+            System.out.println(d.get(i).toString());
+        }
+        Bodega p = y.buscarBodega("ADMIN");
+        System.out.println(p.toString());
     }
 
 }
