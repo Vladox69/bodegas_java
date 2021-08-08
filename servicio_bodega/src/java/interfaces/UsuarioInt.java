@@ -15,4 +15,5 @@ import models.Usuario;
 public interface UsuarioInt {
     List listarUsuario();
     Usuario buscarUsuario(String nombre);
+    Usuario validarUsuario(String nombre, String contra);
 }

@@ -29,6 +29,7 @@ public class UsuarioProvider implements UsuarioInt {
     conexion conn = new conexion();
     Integer resp;
     String mensaje;
+    Usuario usuario;
 
     @Override
     public List listarUsuario() {
@@ -55,8 +56,29 @@ public class UsuarioProvider implements UsuarioInt {
 
     @Override
     public Usuario buscarUsuario(String nombre) {
-        Usuario usuario = new Usuario();
+        usuario = new Usuario();
         String sql = "select * from usuarios where nombre ='" + nombre + "'";
+        try {
+            conexion = conn.getConexion();
+            prepared = (PreparedStatement) conexion.prepareStatement(sql);
+            result = prepared.executeQuery();
+            while (result.next()) {
+                usuario.setId(result.getString("id"));
+                usuario.setNombre(result.getString("nombre"));
+                usuario.setPassword(result.getString("contra"));
+                usuario.setIdbod(result.getString("idbod"));
+                usuario.setPerfil(result.getString("perfil"));
+            }
+        } catch (SQLException ex) {
+            System.out.println("Problema en "+ex.getMessage());
+        }
+        return usuario;
+    }
+
+    @Override
+    public Usuario validarUsuario(String nombre, String contra) {
+       usuario = new Usuario();
+       String sql = "select * from usuarios where nombre ='" + nombre + "'and contra ='" + contra + "'";
         try {
             conexion = conn.getConexion();
             prepared = (PreparedStatement) conexion.prepareStatement(sql);

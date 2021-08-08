@@ -46,4 +46,13 @@ public class servicioUsuario {
         Usuario usuario= usuarioProvider.buscarUsuario(nombre);
         return usuario;
     }
+
+    /**
+     * Web service operation
+     */
+    @WebMethod(operationName = "validarUsuario")
+    public Usuario validarUsuario(@WebParam(name = "nombre") String nombre, @WebParam(name = "contra") String contra) {
+        Usuario usuario = usuarioProvider.validarUsuario( nombre, contra);
+        return usuario;
+    }
 }
