@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<catalog xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog" prefer="system">
+    <system systemId="http://localhost:8080/servicio_bodega/servicioUsuario?wsdl" uri="wsdl/localhost_8080/servicio_bodega/servicioUsuario.wsdl"/>
+    <system systemId="http://localhost:8080/servicio_bodega/servicioUsuario?xsd=1" uri="wsdl/localhost_8080/servicio_bodega/servicioUsuario.xsd_1.xsd"/>
+    <system systemId="http://localhost:8080/servicio_bodega/servicioBodega?wsdl" uri="wsdl/localhost_8080/servicio_bodega/servicioBodega.wsdl"/>
+    <system systemId="http://localhost:8080/servicio_bodega/servicioBodega?xsd=1" uri="wsdl/localhost_8080/servicio_bodega/servicioBodega.xsd_1.xsd"/>
+    <system systemId="http://localhost:8080/servicio_bodega/servicioProducto?wsdl" uri="wsdl/localhost_8080/servicio_bodega/servicioProducto.wsdl"/>
+    <system systemId="http://localhost:8080/servicio_bodega/servicioProducto?xsd=1" uri="wsdl/localhost_8080/servicio_bodega/servicioProducto.xsd_1.xsd"/>
+    <system systemId="http://localhost:8080/servicio_bodega/servicioDetalle?wsdl" uri="wsdl/localhost_8080/servicio_bodega/servicioDetalle.wsdl"/>
+    <system systemId="http://localhost:8080/servicio_bodega/servicioDetalle?xsd=1" uri="wsdl/localhost_8080/servicio_bodega/servicioDetalle.xsd_1.xsd"/>
+</catalog>
