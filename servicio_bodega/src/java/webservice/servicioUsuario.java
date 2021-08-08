@@ -22,11 +22,6 @@ public class servicioUsuario {
     /**
      * This is a sample web service operation
      */
-    @WebMethod(operationName = "hello")
-    public String hello(@WebParam(name = "name") String txt) {
-        return "Hello " + txt + " !";
-    }
-
     /**
      * Web service operation
      * Listar los uaurios
@@ -52,7 +47,6 @@ public class servicioUsuario {
      */
     @WebMethod(operationName = "validarUsuario")
     public Usuario validarUsuario(@WebParam(name = "nombre") String nombre, @WebParam(name = "contra") String contra) {
-        Usuario usuario = usuarioProvider.validarUsuario( nombre, contra);
-        return usuario;
+        return usuarioProvider.validarUsuario( nombre, contra);
     }
 }

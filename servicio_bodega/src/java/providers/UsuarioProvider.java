@@ -77,23 +77,28 @@ public class UsuarioProvider implements UsuarioInt {
 
     @Override
     public Usuario validarUsuario(String nombre, String contra) {
-       usuario = new Usuario();
+       Usuario us = null;
        String sql = "select * from usuarios where nombre ='" + nombre + "'and contra ='" + contra + "'";
         try {
             conexion = conn.getConexion();
             prepared = (PreparedStatement) conexion.prepareStatement(sql);
             result = prepared.executeQuery();
-            while (result.next()) {
-                usuario.setId(result.getString("id"));
-                usuario.setNombre(result.getString("nombre"));
-                usuario.setPassword(result.getString("contra"));
-                usuario.setIdbod(result.getString("idbod"));
-                usuario.setPerfil(result.getString("perfil"));
+            
+            if(result.next()){
+                String id, nom, pass, idbod, perfil;
+                id = result.getString("id");
+                nom = result.getString("nombre");
+                pass = result.getString("contra");
+                idbod = result.getString("idbod");
+                perfil = result.getString("perfil");
+                
+                us = new Usuario(id, nombre, pass, idbod, perfil);
             }
+
         } catch (SQLException ex) {
             System.out.println("Problema en "+ex.getMessage());
         }
-        return usuario;
+        return us;
     }
 
 }
