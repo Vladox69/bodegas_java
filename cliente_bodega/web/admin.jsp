@@ -12,6 +12,16 @@
         <title>JSP Page</title>
     </head>
     <body>
-        <h1>Bienvenido Admin</h1>
+        
+        <%
+            HttpSession sesion = request.getSession();
+            if ( session.getAttribute("usuarioValido") == null || session.getAttribute("usuarioValido").equals("0") ){
+                response.sendRedirect("index.jsp");
+            }
+        %>
+        
+        <h1>Bienvenido admin 
+            
+        </h1>
     </body>
 </html>

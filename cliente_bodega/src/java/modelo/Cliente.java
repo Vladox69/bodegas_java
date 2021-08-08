@@ -16,7 +16,7 @@ import webservices.Usuario;
 public class Cliente {
     public Cliente(){}
 
-    public static Usuario validarUsuario(java.lang.String nombre, java.lang.String contra) {
+    public Usuario validarUsuario(java.lang.String nombre, java.lang.String contra) {
         webservices.ServicioUsuario_Service service = new webservices.ServicioUsuario_Service();
         webservices.ServicioUsuario port = service.getServicioUsuarioPort();
         return port.validarUsuario(nombre, contra);
