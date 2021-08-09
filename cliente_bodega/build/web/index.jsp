@@ -13,6 +13,7 @@
         <title>Bodegas AOS</title>
     </head>
     <body>
+
         <div class="container mt-5">
             <div class="row">
                 <div class="col-sm">
@@ -26,7 +27,7 @@
                             <label for="exampleInputPassword1" class="form-label">Contraseña</label>
                             <input type="password" class="form-control" name="contra">
                         </div>
-                        <button type="submit" class="btn btn-primary" name="login">Ingresar</button>
+                        <button type="submit" class="btn btn-primary">Ingresar</button>
                     </form>
 
                 </div>

@@ -13,6 +13,9 @@
     <service name="servicioDetalle">
       <implementation-class>webservice.servicioDetalle</implementation-class>
     </service>
+    <service name="ServiciosAdmin">
+      <implementation-class>webservice.ServiciosAdmin</implementation-class>
+    </service>
   </services>
   <clients/>
 </jax-ws>

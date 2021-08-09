@@ -90,5 +90,21 @@
         <delete dir="${build.generated.sources.dir}/jax-ws/webservice"/>
         <delete dir="${build.generated.dir}/jax-wsCache/servicioDetalle"/>
     </target>
-    <target name="wsimport-client-generate" depends="wsimport-client-servicioUsuario, wsimport-client-servicioBodega, wsimport-client-servicioProducto, wsimport-client-servicioDetalle"/>
+    <target name="wsimport-client-ServiciosAdmin" depends="wsimport-init">
+        <mkdir dir="${build.generated.dir}/jax-wsCache/ServiciosAdmin"/>
+        <wsimport sourcedestdir="${build.generated.dir}/jax-wsCache/ServiciosAdmin" destdir="${build.generated.dir}/jax-wsCache/ServiciosAdmin" wsdl="${basedir}/${conf-dir}xml-resources/web-service-references/ServiciosAdmin/wsdl/localhost_8080/servicio_bodega/ServiciosAdmin.wsdl" catalog="catalog.xml" encoding="${source.encoding}" extension="true" verbose="true" fork="false" wsdlLocation="http://localhost:8080/servicio_bodega/ServiciosAdmin?wsdl" xnocompile="true" xendorsed="true">
+            <depends file="${basedir}/${conf-dir}xml-resources/web-service-references/ServiciosAdmin/wsdl/localhost_8080/servicio_bodega/ServiciosAdmin.wsdl"/>
+            <produces dir="${build.generated.dir}/jax-wsCache/ServiciosAdmin"/>
+        </wsimport>
+        <copy todir="${build.generated.sources.dir}/jax-ws">
+            <fileset dir="${build.generated.dir}/jax-wsCache/ServiciosAdmin">
+                <include name="**/*.java"/>
+            </fileset>
+        </copy>
+    </target>
+    <target name="wsimport-client-clean-ServiciosAdmin" depends="-init-project">
+        <delete dir="${build.generated.sources.dir}/jax-ws/webservice"/>
+        <delete dir="${build.generated.dir}/jax-wsCache/ServiciosAdmin"/>
+    </target>
+    <target name="wsimport-client-generate" depends="wsimport-client-servicioUsuario, wsimport-client-servicioBodega, wsimport-client-servicioProducto, wsimport-client-servicioDetalle, wsimport-client-ServiciosAdmin"/>
 </project>

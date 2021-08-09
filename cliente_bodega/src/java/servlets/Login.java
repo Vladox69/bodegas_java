@@ -8,7 +8,6 @@ package servlets;
 import modelo.Cliente;
 import java.io.IOException;
 import java.io.PrintWriter;
-import static java.lang.System.out;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -39,40 +38,28 @@ public class Login extends HttpServlet {
      * @throws ServletException if a servlet-specific error occurs
      * @throws IOException if an I/O error occurs
      */
-    private Usuario validarUsuario(java.lang.String nombre, java.lang.String contra) {
-        // Note that the injected javax.xml.ws.Service reference as well as port objects are not thread safe.
-        // If the calling of port operations may lead to race condition some synchronization is required.
-        webservices.ServicioUsuario port = service.getServicioUsuarioPort();
-        return port.validarUsuario(nombre, contra);
-    }
-    
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-
-        if (request.getParameter("login") != null) {
-            String usuario = request.getParameter("usuario");
-            String contra = request.getParameter("contra");
+        String usuario = request.getParameter("usuario");
+        String contra = request.getParameter("contra");
+        
+        Usuario u = validarUsuario(usuario, contra);
+        
+        if ( u != null && u.getPerfil().equalsIgnoreCase("admin")) {
             HttpSession sesion = request.getSession();
-            Usuario u = validarUsuario(usuario, contra);
-            
-            if( u == null ){
-                out.print("Usuario o contraseña incorrecta");
-                response.sendRedirect("index.jsp");
-            }else if (u != null && u.getPerfil().equalsIgnoreCase("admin")) {
-                sesion.setAttribute("usuarioValido", "1");
-                sesion.setAttribute("usuarioValido", u.getNombre());
-                //Si el usuario es valida se redirecciona a la ventana de admin
-                response.sendRedirect("admin.jsp");
-            } else if (u != null && u.getPerfil().equalsIgnoreCase("vendedor")) {
-                sesion.setAttribute("usuarioValido", "1");
-                sesion.setAttribute("usuarioValido", u.getNombre());
-                //Si el usuario es valida se redirecciona a la ventana del vendedor
-                response.sendRedirect("admin.jsp");
-            }
-
+            sesion.setAttribute("usuarioValido", u);
+            //Si el usuario es valida se redirecciona a la ventana de admin
+            response.sendRedirect("admin.jsp");
+        }else if (u != null && u.getPerfil().equalsIgnoreCase("vendedor")){
+            HttpSession sesion = request.getSession();
+            sesion.setAttribute("usuarioValido", u);
+            //Si el usuario es valida se redirecciona a la ventana del vendedor
+            response.sendRedirect("admin.jsp");
+        }else{
+            response.sendRedirect("index.jsp");
         }
-
+        
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
@@ -114,6 +101,11 @@ public class Login extends HttpServlet {
         return "Short description";
     }// </editor-fold>
 
-    
+    private Usuario validarUsuario(java.lang.String nombre, java.lang.String contra) {
+        // Note that the injected javax.xml.ws.Service reference as well as port objects are not thread safe.
+        // If the calling of port operations may lead to race condition some synchronization is required.
+        webservices.ServicioUsuario port = service.getServicioUsuarioPort();
+        return port.validarUsuario(nombre, contra);
+    }
 
 }
