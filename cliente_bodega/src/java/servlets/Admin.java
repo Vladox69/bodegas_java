@@ -39,15 +39,28 @@ public class Admin extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
             /* TODO output your page here. You may use following sample code. */
-            out.println("<!DOCTYPE html>");
-            out.println("<html>");
-            out.println("<head>");
-            out.println("<title>Servlet Admin</title>");            
-            out.println("</head>");
-            out.println("<body>");
-            out.println("<h1>Servlet Admin at " + request.getContextPath() + "</h1>");
-            out.println("</body>");
-            out.println("</html>");
+
+            String accion = request.getParameter("accion");
+            if (accion.equals("cantidad")) {
+                String prod = request.getParameter("producto");
+                String bod = request.getParameter("ciudad");
+                int cant = Integer.parseInt(request.getParameter("cantidad"));
+                if (!prod.equals("Selecciona una Producto") || !bod.equals("Selecciona una ciudad") || cant > 0) {
+                    actualizarCantidad(prod, bod, cant);
+                } else {
+                    out.println("<script> alert('Ingrese valores veribles') <script>");
+                }
+            }
+            if (accion.equals("precio")) {
+                String prod = request.getParameter("producto");
+                double precio = Double.parseDouble(request.getParameter("precio"));
+                if (!prod.equals("Selecciona una Producto") || precio > 0) {
+                    actualizarPrecio(prod, precio);
+                } else {
+                    out.println("<script> alert('Ingrese valores veribles') <script>");
+                }
+            }
+            request.getRequestDispatcher("admin.jsp").forward(request, response);
         }
     }
 
@@ -89,5 +102,19 @@ public class Admin extends HttpServlet {
     public String getServletInfo() {
         return "Short description";
     }// </editor-fold>
+
+    private String actualizarCantidad(java.lang.String idPro, java.lang.String idBod, int cantidad) {
+        // Note that the injected javax.xml.ws.Service reference as well as port objects are not thread safe.
+        // If the calling of port operations may lead to race condition some synchronization is required.
+        webservice.ServiciosAdmin port = service.getServiciosAdminPort();
+        return port.actualizarCantidad(idPro, idBod, cantidad);
+    }
+
+    private String actualizarPrecio(java.lang.String idProd, double precio) {
+        // Note that the injected javax.xml.ws.Service reference as well as port objects are not thread safe.
+        // If the calling of port operations may lead to race condition some synchronization is required.
+        webservice.ServiciosAdmin port = service.getServiciosAdminPort();
+        return port.actualizarPrecio(idProd, precio);
+    }
 
 }

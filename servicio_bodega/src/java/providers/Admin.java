@@ -24,8 +24,9 @@ public class Admin implements BodegaInt, ProductoInt{
     Integer resp;
     String mensaje;
     List<DetalleAdmin> wineries;
-    List<String> city;
-    List<String> productos;
+    List<Bodega> city;
+    List<Producto> productos;
+    String sms;
     
     @Override
     public List listarBodegas() {
@@ -69,7 +70,7 @@ public class Admin implements BodegaInt, ProductoInt{
     }
     
     //metodo actualizar cantidad
-    public void actualizarCantidad( String idPro, String idBod, int cantidad){
+    public String actualizarCantidad( String idPro, String idBod, int cantidad){
         try{
             conexion = conn.getConexion();
             int cant = oldCant(idPro, idBod);
@@ -79,17 +80,20 @@ public class Admin implements BodegaInt, ProductoInt{
             ps.setString(1, String.valueOf(newCant));
             int res = ps.executeUpdate();
             if( res > 0 ){
-                System.out.println("Actualizado");
+                sms = "Actualizado";
+                System.out.println(sms);
             }else{
-                System.out.println("No se pudo actualizar");
+                sms = "No se pudo actualizar";
+                System.out.println(sms);
             }
             
         }catch(Exception ex){
            System.out.println("Error find: " +ex); 
         }
+        return sms;
     }
     
-    public void actualizarPrecio( String idPro, double precio ){
+    public String actualizarPrecio( String idPro, double precio ){
         try{
             conexion = conn.getConexion();
             String update2 = "UPDATE producto set precio=? where id="+idPro;
@@ -97,13 +101,16 @@ public class Admin implements BodegaInt, ProductoInt{
             ps.setString(1, String.valueOf(precio));
             int res = ps.executeUpdate();
             if( res > 0 ){
-                System.out.println("Precio actualizado ");
+                sms = "Precio actualizado ";
+                System.out.println(sms);
             }else{
-                System.out.println("No se pudo actualizar precio");
+                sms = "No se pudo actualizar precio ";
+                System.out.println(sms);
             }
         }catch(Exception ex){
            System.out.println("Error find: " +ex); 
         }
+        return sms;
     }
 
     //Metodo para cargar el comboBox
@@ -112,11 +119,11 @@ public class Admin implements BodegaInt, ProductoInt{
         productos = new ArrayList<>();
         conexion = conn.getConexion();
         try{
-            String select = "SELECT nombre FROM productos";
+            String select = "SELECT * FROM producto";
             st = conexion.createStatement();
             result = st.executeQuery(select);
             while( result.next() ){
-                productos.add(result.getString("nombre"));
+                productos.add(new Producto(result.getString("id"), result.getString("nombre"), result.getString("precio")));
             }
         }catch( Exception ex ){
             System.out.println("Error find: " +ex);
@@ -128,16 +135,16 @@ public class Admin implements BodegaInt, ProductoInt{
         city = new ArrayList<>();
         conexion = conn.getConexion();
         try{
-            String select = "SELECT ciudad FROM bodega";
+            String select = "SELECT * FROM bodega";
             st = conexion.createStatement();
             result = st.executeQuery(select);
             while( result.next() ){
-                city.add( result.getString("ciudad") );
+                city.add( new Bodega(result.getString("id") ,result.getString("ciudad") ));
             }
         }catch( Exception ex ){
             System.out.println("Error find: " +ex);
         }
-        return wineries;
+        return city;
     }
 
     @Override

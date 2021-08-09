@@ -4,6 +4,8 @@
     Author     : Usuario
 --%>
 
+<%@page import="webservice.Producto"%>
+<%@page import="webservice.Bodega"%>
 <%@page import="java.util.List"%>
 <%@page import="modelo.AdminB"%>
 <%@page import="webservice.DetalleAdmin"%>
@@ -12,7 +14,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
+        <title>ADMINISTRADOR</title>
     </head>
     <style>
         .cantidad, 
@@ -135,19 +137,34 @@
         <!-- Actualizar cantidad -->
         <div class="actualizar">
             <h2>Actualizar Cantidad</h2>
-            <form action="models/actualizarProductos.php" method="post" id="formulario">
+            <form action="Admin?accion=cantidad" method="post" id="formulario">
                 <label for="">Bodegas: </label>
                 <select id="ciud" name="ciudad">
                     <option value disabled selected>
-                        Selecciona una ciudad
-                    </option>
-                    <option value="1">GUAYAQUIL</option>
-                    <option value="2">QUITO</option>
-                    <option value="3">CUENCA</option>
+                        Selecciona una ciudad</option>
+                    <%
+                        List<Bodega> bod = adminB.ciudades();
+                        for( Bodega p:bod ){
+                    %>
+                    <option value="<%= p.getId() %>"><%= p.getCiudad() %></option>
+                    <% } %>
+                </select>
+                
+                <br>
+                <label for="Admin" >Producto: </label>
+                <select id="prod" name="producto">
+                    <option value disabled selected>
+                        Selecciona una Producto </option>
+                    <%
+                        List<Producto> datos = adminB.productos();
+                        for( Producto p:datos ){
+                    %>
+                    <option value="<%= p.getId() %>"><%= p.getNombre() %></option>
+                    <% } %>
                 </select>
                 </br>
-                <div id="productos" name="producto">
-                </div>
+                <!--<div id="productos" name="producto">
+                </div>-->
                 <div>
                     <label for="cantidad">Cantidad:</label><input type="number" id="cant" class="cantidad" name="cantidad">
                 </div>
@@ -161,15 +178,21 @@
         <!-- Actualizar Producto-->
         <div class="actualizarN">
             <h2>Actualizar precio</h2>
-            <form action="models/actualizarNombre.php" method="post" id="formulario">
+            <form action="Admin?accion=precio" method="post" id="formulario">
 
-                <label for="">Producto:</label>
-                <select name="productoN" id="">
-                    <option value="<?php echo $fila[1] ?>"> hola </option>
+                 <label for="Admin" >Producto: </label>
+                <select id="prod" name="producto">
+                    <option value disabled selected>
+                        Selecciona una Producto </option>
+                    <%
+                        for( Producto p:datos ){
+                    %>
+                    <option value="<%= p.getId() %>"><%= p.getNombre() %></option>
+                    <% } %>
                 </select>
 
                 <div>
-                    <label for="cantidad">Precio:</label><input type="text" id="cant" class="cantidad" name="nombre">
+                    <label for="precio">Precio:</label><input type="text" id="precio" class="cantidad" name="precio">
                 </div>
 
                 <div class="botones">

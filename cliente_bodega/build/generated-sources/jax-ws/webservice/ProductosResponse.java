@@ -10,16 +10,16 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Clase Java para listarBodegasResponse complex type.
+ * <p>Clase Java para productosResponse complex type.
  * 
  * <p>El siguiente fragmento de esquema especifica el contenido que se espera que haya en esta clase.
  * 
  * <pre>
- * &lt;complexType name="listarBodegasResponse"&gt;
+ * &lt;complexType name="productosResponse"&gt;
  *   &lt;complexContent&gt;
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
  *       &lt;sequence&gt;
- *         &lt;element name="return" type="{http://webservice/}detalleAdmin" maxOccurs="unbounded" minOccurs="0"/&gt;
+ *         &lt;element name="return" type="{http://webservice/}producto" maxOccurs="unbounded" minOccurs="0"/&gt;
  *       &lt;/sequence&gt;
  *     &lt;/restriction&gt;
  *   &lt;/complexContent&gt;
@@ -29,13 +29,13 @@ import javax.xml.bind.annotation.XmlType;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "listarBodegasResponse", propOrder = {
+@XmlType(name = "productosResponse", propOrder = {
     "_return"
 })
-public class ListarBodegasResponse {
+public class ProductosResponse {
 
     @XmlElement(name = "return")
-    protected List<DetalleAdmin> _return;
+    protected List<Producto> _return;
 
     /**
      * Gets the value of the return property.
@@ -55,13 +55,13 @@ public class ListarBodegasResponse {
      * 
      * <p>
      * Objects of the following type(s) are allowed in the list
-     * {@link DetalleAdmin }
+     * {@link Producto }
      * 
      * 
      */
-    public List<DetalleAdmin> getReturn() {
+    public List<Producto> getReturn() {
         if (_return == null) {
-            _return = new ArrayList<DetalleAdmin>();
+            _return = new ArrayList<Producto>();
         }
         return this._return;
     }

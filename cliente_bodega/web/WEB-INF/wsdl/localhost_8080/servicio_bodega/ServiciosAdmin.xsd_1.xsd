@@ -1,14 +1,79 @@
 <?xml version='1.0' encoding='UTF-8'?><!-- Published by JAX-WS RI (http://jax-ws.java.net). RI's version is Metro/2.3.2-b608 (trunk-7979; 2015-01-21T12:50:19+0000) JAXWS-RI/2.2.11-b150120.1832 JAXWS-API/2.2.12 JAXB-RI/2.2.12-b141219.1637 JAXB-API/2.2.13-b141020.1521 svn-revision#unknown. --><xs:schema xmlns:tns="http://webservice/" xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1.0" targetNamespace="http://webservice/">
 
-<xs:element name="ListarBodegas" type="tns:ListarBodegas"/>
+<xs:element name="ActualizarCantidad" type="tns:ActualizarCantidad"/>
 
-<xs:element name="ListarBodegasResponse" type="tns:ListarBodegasResponse"/>
+<xs:element name="ActualizarCantidadResponse" type="tns:ActualizarCantidadResponse"/>
 
-<xs:complexType name="ListarBodegas">
+<xs:element name="ActualizarPrecio" type="tns:ActualizarPrecio"/>
+
+<xs:element name="ActualizarPrecioResponse" type="tns:ActualizarPrecioResponse"/>
+
+<xs:element name="Ciudades" type="tns:Ciudades"/>
+
+<xs:element name="CiudadesResponse" type="tns:CiudadesResponse"/>
+
+<xs:element name="listarBodegas" type="tns:listarBodegas"/>
+
+<xs:element name="listarBodegasResponse" type="tns:listarBodegasResponse"/>
+
+<xs:element name="productos" type="tns:productos"/>
+
+<xs:element name="productosResponse" type="tns:productosResponse"/>
+
+<xs:complexType name="Ciudades">
 <xs:sequence/>
 </xs:complexType>
 
-<xs:complexType name="ListarBodegasResponse">
+<xs:complexType name="CiudadesResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:bodega" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="bodega">
+<xs:sequence>
+<xs:element name="ciudad" type="xs:string" minOccurs="0"/>
+<xs:element name="id" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="ActualizarCantidad">
+<xs:sequence>
+<xs:element name="idPro" type="xs:string" minOccurs="0"/>
+<xs:element name="idBod" type="xs:string" minOccurs="0"/>
+<xs:element name="cantidad" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="ActualizarCantidadResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="productos">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="productosResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:producto" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="producto">
+<xs:sequence>
+<xs:element name="id" type="xs:string" minOccurs="0"/>
+<xs:element name="nombre" type="xs:string" minOccurs="0"/>
+<xs:element name="precio" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="listarBodegas">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="listarBodegasResponse">
 <xs:sequence>
 <xs:element name="return" type="tns:detalleAdmin" minOccurs="0" maxOccurs="unbounded"/>
 </xs:sequence>
@@ -30,6 +95,19 @@
 <xs:element name="estado" type="xs:string" minOccurs="0"/>
 <xs:element name="idbod" type="xs:string" minOccurs="0"/>
 <xs:element name="idprod" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="ActualizarPrecio">
+<xs:sequence>
+<xs:element name="idProd" type="xs:string" minOccurs="0"/>
+<xs:element name="precio" type="xs:double"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="ActualizarPrecioResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0"/>
 </xs:sequence>
 </xs:complexType>
 </xs:schema>

@@ -3,6 +3,8 @@ package org.apache.jsp;
 import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.jsp.*;
+import webservice.Producto;
+import webservice.Bodega;
 import java.util.List;
 import modelo.AdminB;
 import webservice.DetalleAdmin;
@@ -50,11 +52,13 @@ public final class admin_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("\n");
       out.write("\n");
       out.write("\n");
+      out.write("\n");
+      out.write("\n");
       out.write("<!DOCTYPE html>\n");
       out.write("<html>\n");
       out.write("    <head>\n");
       out.write("        <meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">\n");
-      out.write("        <title>JSP Page</title>\n");
+      out.write("        <title>ADMINISTRADOR</title>\n");
       out.write("    </head>\n");
       out.write("    <style>\n");
       out.write("        .cantidad, \n");
@@ -191,19 +195,52 @@ public final class admin_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("        <!-- Actualizar cantidad -->\n");
       out.write("        <div class=\"actualizar\">\n");
       out.write("            <h2>Actualizar Cantidad</h2>\n");
-      out.write("            <form action=\"models/actualizarProductos.php\" method=\"post\" id=\"formulario\">\n");
+      out.write("            <form action=\"Admin?accion=cantidad\" method=\"post\" id=\"formulario\">\n");
       out.write("                <label for=\"\">Bodegas: </label>\n");
       out.write("                <select id=\"ciud\" name=\"ciudad\">\n");
       out.write("                    <option value disabled selected>\n");
-      out.write("                        Selecciona una ciudad\n");
-      out.write("                    </option>\n");
-      out.write("                    <option value=\"1\">GUAYAQUIL</option>\n");
-      out.write("                    <option value=\"2\">QUITO</option>\n");
-      out.write("                    <option value=\"3\">CUENCA</option>\n");
+      out.write("                        Selecciona una ciudad</option>\n");
+      out.write("                    ");
+
+                        List<Bodega> bod = adminB.ciudades();
+                        for( Bodega p:bod ){
+                    
+      out.write("\n");
+      out.write("                    <option value=\"");
+      out.print( p.getId() );
+      out.write('"');
+      out.write('>');
+      out.print( p.getCiudad() );
+      out.write("</option>\n");
+      out.write("                    ");
+ } 
+      out.write("\n");
+      out.write("                </select>\n");
+      out.write("                \n");
+      out.write("                <br>\n");
+      out.write("                <label for=\"Admin\" >Producto: </label>\n");
+      out.write("                <select id=\"prod\" name=\"producto\">\n");
+      out.write("                    <option value disabled selected>\n");
+      out.write("                        Selecciona una Producto </option>\n");
+      out.write("                    ");
+
+                        List<Producto> datos = adminB.productos();
+                        for( Producto p:datos ){
+                    
+      out.write("\n");
+      out.write("                    <option value=\"");
+      out.print( p.getId() );
+      out.write('"');
+      out.write('>');
+      out.print( p.getNombre() );
+      out.write("</option>\n");
+      out.write("                    ");
+ } 
+      out.write("\n");
       out.write("                </select>\n");
       out.write("                </br>\n");
-      out.write("                <div id=\"productos\" name=\"producto\">\n");
-      out.write("                </div>\n");
+      out.write("                <!--<div id=\"productos\" name=\"producto\">\n");
+      out.write("                </div>-->\n");
       out.write("                <div>\n");
       out.write("                    <label for=\"cantidad\">Cantidad:</label><input type=\"number\" id=\"cant\" class=\"cantidad\" name=\"cantidad\">\n");
       out.write("                </div>\n");
@@ -217,15 +254,30 @@ public final class admin_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("        <!-- Actualizar Producto-->\n");
       out.write("        <div class=\"actualizarN\">\n");
       out.write("            <h2>Actualizar precio</h2>\n");
-      out.write("            <form action=\"models/actualizarNombre.php\" method=\"post\" id=\"formulario\">\n");
+      out.write("            <form action=\"Admin?accion=precio\" method=\"post\" id=\"formulario\">\n");
       out.write("\n");
-      out.write("                <label for=\"\">Producto:</label>\n");
-      out.write("                <select name=\"productoN\" id=\"\">\n");
-      out.write("                    <option value=\"<?php echo $fila[1] ?>\"> hola </option>\n");
+      out.write("                 <label for=\"Admin\" >Producto: </label>\n");
+      out.write("                <select id=\"prod\" name=\"producto\">\n");
+      out.write("                    <option value disabled selected>\n");
+      out.write("                        Selecciona una Producto </option>\n");
+      out.write("                    ");
+
+                        for( Producto p:datos ){
+                    
+      out.write("\n");
+      out.write("                    <option value=\"");
+      out.print( p.getId() );
+      out.write('"');
+      out.write('>');
+      out.print( p.getNombre() );
+      out.write("</option>\n");
+      out.write("                    ");
+ } 
+      out.write("\n");
       out.write("                </select>\n");
       out.write("\n");
       out.write("                <div>\n");
-      out.write("                    <label for=\"cantidad\">Precio:</label><input type=\"text\" id=\"cant\" class=\"cantidad\" name=\"nombre\">\n");
+      out.write("                    <label for=\"precio\">Precio:</label><input type=\"text\" id=\"precio\" class=\"cantidad\" name=\"precio\">\n");
       out.write("                </div>\n");
       out.write("\n");
       out.write("                <div class=\"botones\">\n");
