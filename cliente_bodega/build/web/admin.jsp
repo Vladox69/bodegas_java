@@ -109,6 +109,12 @@
         }
     </style>
     <body>
+        <%
+            HttpSession sesion = request.getSession();
+            if ( session.getAttribute("usuarioValido") == null || session.getAttribute("usuarioValido").equals("0") ){
+                response.sendRedirect("index.jsp");
+            }
+        %>
         <table>
             <tr>
                 <td><b>NOMBRE</b></td>

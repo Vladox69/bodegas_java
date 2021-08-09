@@ -7,9 +7,9 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Clase Java para ActualizarCantidad complex type.
+ * <p>Java class for ActualizarCantidad complex type.
  * 
- * <p>El siguiente fragmento de esquema especifica el contenido que se espera que haya en esta clase.
+ * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
  * &lt;complexType name="ActualizarCantidad"&gt;
@@ -40,7 +40,7 @@ public class ActualizarCantidad {
     protected int cantidad;
 
     /**
-     * Obtiene el valor de la propiedad idPro.
+     * Gets the value of the idPro property.
      * 
      * @return
      *     possible object is
@@ -52,7 +52,7 @@ public class ActualizarCantidad {
     }
 
     /**
-     * Define el valor de la propiedad idPro.
+     * Sets the value of the idPro property.
      * 
      * @param value
      *     allowed object is
@@ -64,7 +64,7 @@ public class ActualizarCantidad {
     }
 
     /**
-     * Obtiene el valor de la propiedad idBod.
+     * Gets the value of the idBod property.
      * 
      * @return
      *     possible object is
@@ -76,7 +76,7 @@ public class ActualizarCantidad {
     }
 
     /**
-     * Define el valor de la propiedad idBod.
+     * Sets the value of the idBod property.
      * 
      * @param value
      *     allowed object is
@@ -88,7 +88,7 @@ public class ActualizarCantidad {
     }
 
     /**
-     * Obtiene el valor de la propiedad cantidad.
+     * Gets the value of the cantidad property.
      * 
      */
     public int getCantidad() {
@@ -96,7 +96,7 @@ public class ActualizarCantidad {
     }
 
     /**
-     * Define el valor de la propiedad cantidad.
+     * Sets the value of the cantidad property.
      * 
      */
     public void setCantidad(int value) {
