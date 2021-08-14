@@ -4,17 +4,11 @@
 <xsd:import namespace="http://webservice/" schemaLocation="http://localhost:8080/servicio_bodega/servicioUsuario?xsd=1"/>
 </xsd:schema>
 </types>
-<message name="buscarUsuario">
-<part name="parameters" element="tns:buscarUsuario"/>
+<message name="validarUsuario">
+<part name="parameters" element="tns:validarUsuario"/>
 </message>
-<message name="buscarUsuarioResponse">
-<part name="parameters" element="tns:buscarUsuarioResponse"/>
-</message>
-<message name="hello">
-<part name="parameters" element="tns:hello"/>
-</message>
-<message name="helloResponse">
-<part name="parameters" element="tns:helloResponse"/>
+<message name="validarUsuarioResponse">
+<part name="parameters" element="tns:validarUsuarioResponse"/>
 </message>
 <message name="Listar">
 <part name="parameters" element="tns:Listar"/>
@@ -22,42 +16,29 @@
 <message name="ListarResponse">
 <part name="parameters" element="tns:ListarResponse"/>
 </message>
-<message name="validarUsuario">
-<part name="parameters" element="tns:validarUsuario"/>
+<message name="buscarUsuario">
+<part name="parameters" element="tns:buscarUsuario"/>
 </message>
-<message name="validarUsuarioResponse">
-<part name="parameters" element="tns:validarUsuarioResponse"/>
+<message name="buscarUsuarioResponse">
+<part name="parameters" element="tns:buscarUsuarioResponse"/>
 </message>
 <portType name="servicioUsuario">
-<operation name="buscarUsuario">
-<input wsam:Action="http://webservice/servicioUsuario/buscarUsuarioRequest" message="tns:buscarUsuario"/>
-<output wsam:Action="http://webservice/servicioUsuario/buscarUsuarioResponse" message="tns:buscarUsuarioResponse"/>
-</operation>
-<operation name="hello">
-<input wsam:Action="http://webservice/servicioUsuario/helloRequest" message="tns:hello"/>
-<output wsam:Action="http://webservice/servicioUsuario/helloResponse" message="tns:helloResponse"/>
+<operation name="validarUsuario">
+<input wsam:Action="http://webservice/servicioUsuario/validarUsuarioRequest" message="tns:validarUsuario"/>
+<output wsam:Action="http://webservice/servicioUsuario/validarUsuarioResponse" message="tns:validarUsuarioResponse"/>
 </operation>
 <operation name="Listar">
 <input wsam:Action="http://webservice/servicioUsuario/ListarRequest" message="tns:Listar"/>
 <output wsam:Action="http://webservice/servicioUsuario/ListarResponse" message="tns:ListarResponse"/>
 </operation>
-<operation name="validarUsuario">
-<input wsam:Action="http://webservice/servicioUsuario/validarUsuarioRequest" message="tns:validarUsuario"/>
-<output wsam:Action="http://webservice/servicioUsuario/validarUsuarioResponse" message="tns:validarUsuarioResponse"/>
+<operation name="buscarUsuario">
+<input wsam:Action="http://webservice/servicioUsuario/buscarUsuarioRequest" message="tns:buscarUsuario"/>
+<output wsam:Action="http://webservice/servicioUsuario/buscarUsuarioResponse" message="tns:buscarUsuarioResponse"/>
 </operation>
 </portType>
 <binding name="servicioUsuarioPortBinding" type="tns:servicioUsuario">
 <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
-<operation name="buscarUsuario">
-<soap:operation soapAction=""/>
-<input>
-<soap:body use="literal"/>
-</input>
-<output>
-<soap:body use="literal"/>
-</output>
-</operation>
-<operation name="hello">
+<operation name="validarUsuario">
 <soap:operation soapAction=""/>
 <input>
 <soap:body use="literal"/>
@@ -75,7 +56,7 @@
 <soap:body use="literal"/>
 </output>
 </operation>
-<operation name="validarUsuario">
+<operation name="buscarUsuario">
 <soap:operation soapAction=""/>
 <input>
 <soap:body use="literal"/>

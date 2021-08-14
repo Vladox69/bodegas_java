@@ -8,9 +8,9 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Clase Java para buscarProductoResponse complex type.
+ * <p>Java class for buscarProductoResponse complex type.
  * 
- * <p>El siguiente fragmento de esquema especifica el contenido que se espera que haya en esta clase.
+ * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
  * &lt;complexType name="buscarProductoResponse"&gt;
@@ -36,7 +36,7 @@ public class BuscarProductoResponse {
     protected Producto _return;
 
     /**
-     * Obtiene el valor de la propiedad return.
+     * Gets the value of the return property.
      * 
      * @return
      *     possible object is
@@ -48,7 +48,7 @@ public class BuscarProductoResponse {
     }
 
     /**
-     * Define el valor de la propiedad return.
+     * Sets the value of the return property.
      * 
      * @param value
      *     allowed object is

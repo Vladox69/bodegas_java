@@ -21,6 +21,13 @@
 
     <body>
 
+        <%
+            HttpSession sesion = request.getSession();
+            if(sesion.getAttribute("usuarioValido") == null){
+                response.sendRedirect("index.jsp");
+            }
+        %>
+        
         <header class="contenedor">
             <nav class="navegacion">
                 <a href="Navegacion?accion=inicio">Inicio</a>

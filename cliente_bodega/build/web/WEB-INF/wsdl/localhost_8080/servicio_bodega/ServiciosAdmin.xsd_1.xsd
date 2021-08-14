@@ -20,23 +20,6 @@
 
 <xs:element name="productosResponse" type="tns:productosResponse"/>
 
-<xs:complexType name="Ciudades">
-<xs:sequence/>
-</xs:complexType>
-
-<xs:complexType name="CiudadesResponse">
-<xs:sequence>
-<xs:element name="return" type="tns:bodega" minOccurs="0" maxOccurs="unbounded"/>
-</xs:sequence>
-</xs:complexType>
-
-<xs:complexType name="bodega">
-<xs:sequence>
-<xs:element name="ciudad" type="xs:string" minOccurs="0"/>
-<xs:element name="id" type="xs:string" minOccurs="0"/>
-</xs:sequence>
-</xs:complexType>
-
 <xs:complexType name="ActualizarCantidad">
 <xs:sequence>
 <xs:element name="idPro" type="xs:string" minOccurs="0"/>
@@ -51,21 +34,20 @@
 </xs:sequence>
 </xs:complexType>
 
-<xs:complexType name="productos">
+<xs:complexType name="Ciudades">
 <xs:sequence/>
 </xs:complexType>
 
-<xs:complexType name="productosResponse">
+<xs:complexType name="CiudadesResponse">
 <xs:sequence>
-<xs:element name="return" type="tns:producto" minOccurs="0" maxOccurs="unbounded"/>
+<xs:element name="return" type="tns:bodega" minOccurs="0" maxOccurs="unbounded"/>
 </xs:sequence>
 </xs:complexType>
 
-<xs:complexType name="producto">
+<xs:complexType name="bodega">
 <xs:sequence>
+<xs:element name="ciudad" type="xs:string" minOccurs="0"/>
 <xs:element name="id" type="xs:string" minOccurs="0"/>
-<xs:element name="nombre" type="xs:string" minOccurs="0"/>
-<xs:element name="precio" type="xs:string" minOccurs="0"/>
 </xs:sequence>
 </xs:complexType>
 
@@ -95,6 +77,24 @@
 <xs:element name="estado" type="xs:string" minOccurs="0"/>
 <xs:element name="idbod" type="xs:string" minOccurs="0"/>
 <xs:element name="idprod" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="productos">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="productosResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:producto" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="producto">
+<xs:sequence>
+<xs:element name="id" type="xs:string" minOccurs="0"/>
+<xs:element name="nombre" type="xs:string" minOccurs="0"/>
+<xs:element name="precio" type="xs:string" minOccurs="0"/>
 </xs:sequence>
 </xs:complexType>
 

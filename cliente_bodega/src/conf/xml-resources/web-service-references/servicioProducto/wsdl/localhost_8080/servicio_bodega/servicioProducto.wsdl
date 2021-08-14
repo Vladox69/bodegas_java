@@ -4,17 +4,17 @@
 <xsd:import namespace="http://webservice/" schemaLocation="http://localhost:8080/servicio_bodega/servicioProducto?xsd=1"/>
 </xsd:schema>
 </types>
-<message name="buscarProducto">
-<part name="parameters" element="tns:buscarProducto"/>
-</message>
-<message name="buscarProductoResponse">
-<part name="parameters" element="tns:buscarProductoResponse"/>
-</message>
 <message name="hello">
 <part name="parameters" element="tns:hello"/>
 </message>
 <message name="helloResponse">
 <part name="parameters" element="tns:helloResponse"/>
+</message>
+<message name="buscarProducto">
+<part name="parameters" element="tns:buscarProducto"/>
+</message>
+<message name="buscarProductoResponse">
+<part name="parameters" element="tns:buscarProductoResponse"/>
 </message>
 <message name="Listar">
 <part name="parameters" element="tns:Listar"/>
@@ -23,13 +23,13 @@
 <part name="parameters" element="tns:ListarResponse"/>
 </message>
 <portType name="servicioProducto">
-<operation name="buscarProducto">
-<input wsam:Action="http://webservice/servicioProducto/buscarProductoRequest" message="tns:buscarProducto"/>
-<output wsam:Action="http://webservice/servicioProducto/buscarProductoResponse" message="tns:buscarProductoResponse"/>
-</operation>
 <operation name="hello">
 <input wsam:Action="http://webservice/servicioProducto/helloRequest" message="tns:hello"/>
 <output wsam:Action="http://webservice/servicioProducto/helloResponse" message="tns:helloResponse"/>
+</operation>
+<operation name="buscarProducto">
+<input wsam:Action="http://webservice/servicioProducto/buscarProductoRequest" message="tns:buscarProducto"/>
+<output wsam:Action="http://webservice/servicioProducto/buscarProductoResponse" message="tns:buscarProductoResponse"/>
 </operation>
 <operation name="Listar">
 <input wsam:Action="http://webservice/servicioProducto/ListarRequest" message="tns:Listar"/>
@@ -38,7 +38,7 @@
 </portType>
 <binding name="servicioProductoPortBinding" type="tns:servicioProducto">
 <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
-<operation name="buscarProducto">
+<operation name="hello">
 <soap:operation soapAction=""/>
 <input>
 <soap:body use="literal"/>
@@ -47,7 +47,7 @@
 <soap:body use="literal"/>
 </output>
 </operation>
-<operation name="hello">
+<operation name="buscarProducto">
 <soap:operation soapAction=""/>
 <input>
 <soap:body use="literal"/>

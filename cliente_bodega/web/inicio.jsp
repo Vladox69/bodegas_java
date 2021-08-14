@@ -17,7 +17,7 @@
         <link href="css/style.css" rel="stylesheet" type="text/css"/>
     </head>
     <body>
-        <%
+            <%
                  Usuario u =(Usuario) session.getAttribute("usuarioValido");
             %>
          <header class="contenedor">

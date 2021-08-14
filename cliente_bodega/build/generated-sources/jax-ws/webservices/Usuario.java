@@ -7,9 +7,9 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Clase Java para usuario complex type.
+ * <p>Java class for usuario complex type.
  * 
- * <p>El siguiente fragmento de esquema especifica el contenido que se espera que haya en esta clase.
+ * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
  * &lt;complexType name="usuario"&gt;
@@ -46,7 +46,7 @@ public class Usuario {
     protected String perfil;
 
     /**
-     * Obtiene el valor de la propiedad id.
+     * Gets the value of the id property.
      * 
      * @return
      *     possible object is
@@ -58,7 +58,7 @@ public class Usuario {
     }
 
     /**
-     * Define el valor de la propiedad id.
+     * Sets the value of the id property.
      * 
      * @param value
      *     allowed object is
@@ -70,7 +70,7 @@ public class Usuario {
     }
 
     /**
-     * Obtiene el valor de la propiedad idbod.
+     * Gets the value of the idbod property.
      * 
      * @return
      *     possible object is
@@ -82,7 +82,7 @@ public class Usuario {
     }
 
     /**
-     * Define el valor de la propiedad idbod.
+     * Sets the value of the idbod property.
      * 
      * @param value
      *     allowed object is
@@ -94,7 +94,7 @@ public class Usuario {
     }
 
     /**
-     * Obtiene el valor de la propiedad nombre.
+     * Gets the value of the nombre property.
      * 
      * @return
      *     possible object is
@@ -106,7 +106,7 @@ public class Usuario {
     }
 
     /**
-     * Define el valor de la propiedad nombre.
+     * Sets the value of the nombre property.
      * 
      * @param value
      *     allowed object is
@@ -118,7 +118,7 @@ public class Usuario {
     }
 
     /**
-     * Obtiene el valor de la propiedad password.
+     * Gets the value of the password property.
      * 
      * @return
      *     possible object is
@@ -130,7 +130,7 @@ public class Usuario {
     }
 
     /**
-     * Define el valor de la propiedad password.
+     * Sets the value of the password property.
      * 
      * @param value
      *     allowed object is
@@ -142,7 +142,7 @@ public class Usuario {
     }
 
     /**
-     * Obtiene el valor de la propiedad perfil.
+     * Gets the value of the perfil property.
      * 
      * @return
      *     possible object is
@@ -154,7 +154,7 @@ public class Usuario {
     }
 
     /**
-     * Define el valor de la propiedad perfil.
+     * Sets the value of the perfil property.
      * 
      * @param value
      *     allowed object is

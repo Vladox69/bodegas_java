@@ -32,7 +32,7 @@ public class Navegacion extends HttpServlet {
      */
     
     String acceso = "";
-    String cerrar = "index.jsp";
+    String cerrar = "logout.jsp";
     String admin= "admin.jsp";
     String producto="productos.jsp";
     String inicio="inicio.jsp";

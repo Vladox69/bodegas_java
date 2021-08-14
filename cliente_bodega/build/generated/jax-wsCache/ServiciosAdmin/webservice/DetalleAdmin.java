@@ -7,9 +7,9 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Clase Java para detalleAdmin complex type.
+ * <p>Java class for detalleAdmin complex type.
  * 
- * <p>El siguiente fragmento de esquema especifica el contenido que se espera que haya en esta clase.
+ * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
  * &lt;complexType name="detalleAdmin"&gt;
@@ -36,7 +36,7 @@ public class DetalleAdmin
     protected String precio;
 
     /**
-     * Obtiene el valor de la propiedad precio.
+     * Gets the value of the precio property.
      * 
      * @return
      *     possible object is
@@ -48,7 +48,7 @@ public class DetalleAdmin
     }
 
     /**
-     * Define el valor de la propiedad precio.
+     * Sets the value of the precio property.
      * 
      * @param value
      *     allowed object is

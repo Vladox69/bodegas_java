@@ -7,9 +7,9 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Clase Java para ActualizarPrecio complex type.
+ * <p>Java class for ActualizarPrecio complex type.
  * 
- * <p>El siguiente fragmento de esquema especifica el contenido que se espera que haya en esta clase.
+ * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
  * &lt;complexType name="ActualizarPrecio"&gt;
@@ -37,7 +37,7 @@ public class ActualizarPrecio {
     protected double precio;
 
     /**
-     * Obtiene el valor de la propiedad idProd.
+     * Gets the value of the idProd property.
      * 
      * @return
      *     possible object is
@@ -49,7 +49,7 @@ public class ActualizarPrecio {
     }
 
     /**
-     * Define el valor de la propiedad idProd.
+     * Sets the value of the idProd property.
      * 
      * @param value
      *     allowed object is
@@ -61,7 +61,7 @@ public class ActualizarPrecio {
     }
 
     /**
-     * Obtiene el valor de la propiedad precio.
+     * Gets the value of the precio property.
      * 
      */
     public double getPrecio() {
@@ -69,7 +69,7 @@ public class ActualizarPrecio {
     }
 
     /**
-     * Define el valor de la propiedad precio.
+     * Sets the value of the precio property.
      * 
      */
     public void setPrecio(double value) {

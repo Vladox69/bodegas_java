@@ -4,6 +4,12 @@
 <xsd:import namespace="http://webservice/" schemaLocation="http://localhost:8080/servicio_bodega/ServiciosAdmin?xsd=1"/>
 </xsd:schema>
 </types>
+<message name="ActualizarCantidad">
+<part name="parameters" element="tns:ActualizarCantidad"/>
+</message>
+<message name="ActualizarCantidadResponse">
+<part name="parameters" element="tns:ActualizarCantidadResponse"/>
+</message>
 <message name="ActualizarPrecio">
 <part name="parameters" element="tns:ActualizarPrecio"/>
 </message>
@@ -16,11 +22,11 @@
 <message name="CiudadesResponse">
 <part name="parameters" element="tns:CiudadesResponse"/>
 </message>
-<message name="ActualizarCantidad">
-<part name="parameters" element="tns:ActualizarCantidad"/>
+<message name="listarBodegas">
+<part name="parameters" element="tns:listarBodegas"/>
 </message>
-<message name="ActualizarCantidadResponse">
-<part name="parameters" element="tns:ActualizarCantidadResponse"/>
+<message name="listarBodegasResponse">
+<part name="parameters" element="tns:listarBodegasResponse"/>
 </message>
 <message name="productos">
 <part name="parameters" element="tns:productos"/>
@@ -28,13 +34,11 @@
 <message name="productosResponse">
 <part name="parameters" element="tns:productosResponse"/>
 </message>
-<message name="listarBodegas">
-<part name="parameters" element="tns:listarBodegas"/>
-</message>
-<message name="listarBodegasResponse">
-<part name="parameters" element="tns:listarBodegasResponse"/>
-</message>
 <portType name="ServiciosAdmin">
+<operation name="ActualizarCantidad">
+<input wsam:Action="http://webservice/ServiciosAdmin/ActualizarCantidadRequest" message="tns:ActualizarCantidad"/>
+<output wsam:Action="http://webservice/ServiciosAdmin/ActualizarCantidadResponse" message="tns:ActualizarCantidadResponse"/>
+</operation>
 <operation name="ActualizarPrecio">
 <input wsam:Action="http://webservice/ServiciosAdmin/ActualizarPrecioRequest" message="tns:ActualizarPrecio"/>
 <output wsam:Action="http://webservice/ServiciosAdmin/ActualizarPrecioResponse" message="tns:ActualizarPrecioResponse"/>
@@ -43,21 +47,26 @@
 <input wsam:Action="http://webservice/ServiciosAdmin/CiudadesRequest" message="tns:Ciudades"/>
 <output wsam:Action="http://webservice/ServiciosAdmin/CiudadesResponse" message="tns:CiudadesResponse"/>
 </operation>
-<operation name="ActualizarCantidad">
-<input wsam:Action="http://webservice/ServiciosAdmin/ActualizarCantidadRequest" message="tns:ActualizarCantidad"/>
-<output wsam:Action="http://webservice/ServiciosAdmin/ActualizarCantidadResponse" message="tns:ActualizarCantidadResponse"/>
+<operation name="listarBodegas">
+<input wsam:Action="http://webservice/ServiciosAdmin/listarBodegasRequest" message="tns:listarBodegas"/>
+<output wsam:Action="http://webservice/ServiciosAdmin/listarBodegasResponse" message="tns:listarBodegasResponse"/>
 </operation>
 <operation name="productos">
 <input wsam:Action="http://webservice/ServiciosAdmin/productosRequest" message="tns:productos"/>
 <output wsam:Action="http://webservice/ServiciosAdmin/productosResponse" message="tns:productosResponse"/>
 </operation>
-<operation name="listarBodegas">
-<input wsam:Action="http://webservice/ServiciosAdmin/listarBodegasRequest" message="tns:listarBodegas"/>
-<output wsam:Action="http://webservice/ServiciosAdmin/listarBodegasResponse" message="tns:listarBodegasResponse"/>
-</operation>
 </portType>
 <binding name="ServiciosAdminPortBinding" type="tns:ServiciosAdmin">
 <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
+<operation name="ActualizarCantidad">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+</operation>
 <operation name="ActualizarPrecio">
 <soap:operation soapAction=""/>
 <input>
@@ -76,7 +85,7 @@
 <soap:body use="literal"/>
 </output>
 </operation>
-<operation name="ActualizarCantidad">
+<operation name="listarBodegas">
 <soap:operation soapAction=""/>
 <input>
 <soap:body use="literal"/>
@@ -86,15 +95,6 @@
 </output>
 </operation>
 <operation name="productos">
-<soap:operation soapAction=""/>
-<input>
-<soap:body use="literal"/>
-</input>
-<output>
-<soap:body use="literal"/>
-</output>
-</operation>
-<operation name="listarBodegas">
 <soap:operation soapAction=""/>
 <input>
 <soap:body use="literal"/>
