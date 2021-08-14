@@ -51,8 +51,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link VenderProducto }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link VenderProducto }{@code >}
      * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link VenderProducto }{@code >}
      */
     @XmlElementDecl(namespace = "http://webservice/", name = "VenderProducto")
     public JAXBElement<VenderProducto> createVenderProducto(VenderProducto value) {
@@ -60,8 +64,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link VenderProductoResponse }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link VenderProductoResponse }{@code >}
      * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link VenderProductoResponse }{@code >}
      */
     @XmlElementDecl(namespace = "http://webservice/", name = "VenderProductoResponse")
     public JAXBElement<VenderProductoResponse> createVenderProductoResponse(VenderProductoResponse value) {
