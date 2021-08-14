@@ -6,6 +6,7 @@
 package providers;
 
 import java.util.List;
+import models.Detalle;
 import models.Producto;
 
 /**
@@ -21,5 +22,8 @@ public class Borrar {
             System.out.println(p.getNombre());
             System.out.println(p.getPrecio());
         }
+       DetalleProvider x=new DetalleProvider();
+       List<Detalle> a= x.listadoProductosBodega("1");
+        System.out.println(a.get(0).getIdprod());
     }
 }
