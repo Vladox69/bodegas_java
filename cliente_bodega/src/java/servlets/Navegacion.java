@@ -5,29 +5,21 @@
  */
 package servlets;
 
-import modelo.Cliente;
 import java.io.IOException;
 import java.io.PrintWriter;
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
-import javax.xml.ws.WebServiceRef;
-import modelo.Cliente;
-import webservices.ServicioUsuario_Service;
-import webservices.Usuario;
 
 /**
  *
- * @author Usuario
+ * @author ASUS
  */
-@WebServlet(name = "Login", urlPatterns = {"/Login"})
-public class Login extends HttpServlet {
-
-    @WebServiceRef(wsdlLocation = "WEB-INF/wsdl/localhost_8080/servicio_bodega/servicioUsuario.wsdl")
-    private ServicioUsuario_Service service;
+@WebServlet(name = "Navegacion", urlPatterns = {"/Navegacion"})
+public class Navegacion extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -38,28 +30,28 @@ public class Login extends HttpServlet {
      * @throws ServletException if a servlet-specific error occurs
      * @throws IOException if an I/O error occurs
      */
+    
+    String acceso = "";
+    String cerrar = "index.jsp";
+    String admin= "admin.jsp";
+    String producto="productos.jsp";
+    String inicio="inicio.jsp";
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        String usuario = request.getParameter("usuario");
-        String contra = request.getParameter("contra");
-        
-        Usuario u = validarUsuario(usuario, contra);
-        
-        if ( u != null && u.getPerfil().equalsIgnoreCase("admin")) {
-            HttpSession sesion = request.getSession();
-            sesion.setAttribute("usuarioValido", u);
-            //Si el usuario es valida se redirecciona a la ventana de admin
-            response.sendRedirect("admin.jsp");
-        }else if (u != null && u.getPerfil().equalsIgnoreCase("vendedor")){
-            HttpSession sesion = request.getSession();
-            sesion.setAttribute("usuarioValido", u);
-            //Si el usuario es valida se redirecciona a la ventana del vendedor
-            response.sendRedirect("productos.jsp");
-        }else{
-            response.sendRedirect("index.jsp");
+        String accion = request.getParameter("accion");
+        if(accion.equals("cerrar")){
+            acceso=cerrar;
+        }else if(accion.equals("admin")){
+            acceso=admin;
+        }else if(accion.equals("inicio")){
+            acceso=inicio;
+        }else if(accion.equals("producto")){
+            acceso=producto;
         }
         
+        RequestDispatcher dispatcher = request.getRequestDispatcher(acceso);
+        dispatcher.forward(request, response);
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
@@ -100,12 +92,5 @@ public class Login extends HttpServlet {
     public String getServletInfo() {
         return "Short description";
     }// </editor-fold>
-
-    private Usuario validarUsuario(java.lang.String nombre, java.lang.String contra) {
-        // Note that the injected javax.xml.ws.Service reference as well as port objects are not thread safe.
-        // If the calling of port operations may lead to race condition some synchronization is required.
-        webservices.ServicioUsuario port = service.getServicioUsuarioPort();
-        return port.validarUsuario(nombre, contra);
-    }
 
 }

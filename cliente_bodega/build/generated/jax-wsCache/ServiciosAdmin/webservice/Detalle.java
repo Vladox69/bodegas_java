@@ -8,9 +8,9 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Java class for detalle complex type.
+ * <p>Clase Java para detalle complex type.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
+ * <p>El siguiente fragmento de esquema especifica el contenido que se espera que haya en esta clase.
  * 
  * <pre>
  * &lt;complexType name="detalle"&gt;
@@ -47,7 +47,7 @@ public class Detalle {
     protected String idprod;
 
     /**
-     * Gets the value of the cantidad property.
+     * Obtiene el valor de la propiedad cantidad.
      * 
      * @return
      *     possible object is
@@ -59,7 +59,7 @@ public class Detalle {
     }
 
     /**
-     * Sets the value of the cantidad property.
+     * Define el valor de la propiedad cantidad.
      * 
      * @param value
      *     allowed object is
@@ -71,7 +71,7 @@ public class Detalle {
     }
 
     /**
-     * Gets the value of the estado property.
+     * Obtiene el valor de la propiedad estado.
      * 
      * @return
      *     possible object is
@@ -83,7 +83,7 @@ public class Detalle {
     }
 
     /**
-     * Sets the value of the estado property.
+     * Define el valor de la propiedad estado.
      * 
      * @param value
      *     allowed object is
@@ -95,7 +95,7 @@ public class Detalle {
     }
 
     /**
-     * Gets the value of the idbod property.
+     * Obtiene el valor de la propiedad idbod.
      * 
      * @return
      *     possible object is
@@ -107,7 +107,7 @@ public class Detalle {
     }
 
     /**
-     * Sets the value of the idbod property.
+     * Define el valor de la propiedad idbod.
      * 
      * @param value
      *     allowed object is
@@ -119,7 +119,7 @@ public class Detalle {
     }
 
     /**
-     * Gets the value of the idprod property.
+     * Obtiene el valor de la propiedad idprod.
      * 
      * @return
      *     possible object is
@@ -131,7 +131,7 @@ public class Detalle {
     }
 
     /**
-     * Sets the value of the idprod property.
+     * Define el valor de la propiedad idprod.
      * 
      * @param value
      *     allowed object is
