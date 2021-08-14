@@ -10,4 +10,6 @@
     <system systemId="http://localhost:8080/servicio_bodega/servicioDetalle?xsd=1" uri="wsdl/localhost_8080/servicio_bodega/servicioDetalle.xsd_1.xsd"/>
     <system systemId="http://localhost:8080/servicio_bodega/ServiciosAdmin?wsdl" uri="wsdl/localhost_8080/servicio_bodega/ServiciosAdmin.wsdl"/>
     <system systemId="http://localhost:8080/servicio_bodega/ServiciosAdmin?xsd=1" uri="wsdl/localhost_8080/servicio_bodega/ServiciosAdmin.xsd_1.xsd"/>
+    <system systemId="http://localhost:8080/servicio_bodega/Vender?wsdl" uri="wsdl/localhost_8080/servicio_bodega/Vender.wsdl"/>
+    <system systemId="http://localhost:8080/servicio_bodega/Vender?xsd=1" uri="wsdl/localhost_8080/servicio_bodega/Vender.xsd_1.xsd"/>
 </catalog>

@@ -8,6 +8,8 @@
     <system systemId="http://localhost:8080/servicio_bodega/servicioProducto?xsd=1" uri="src/conf/xml-resources/web-service-references/servicioProducto/wsdl/localhost_8080/servicio_bodega/servicioProducto.xsd_1.xsd"/>
     <system systemId="http://localhost:8080/servicio_bodega/servicioDetalle?wsdl" uri="src/conf/xml-resources/web-service-references/servicioDetalle/wsdl/localhost_8080/servicio_bodega/servicioDetalle.wsdl"/>
     <system systemId="http://localhost:8080/servicio_bodega/servicioDetalle?xsd=1" uri="src/conf/xml-resources/web-service-references/servicioDetalle/wsdl/localhost_8080/servicio_bodega/servicioDetalle.xsd_1.xsd"/>
+    <system systemId="http://localhost:8080/servicio_bodega/Vender?wsdl" uri="src/conf/xml-resources/web-service-references/Vender/wsdl/localhost_8080/servicio_bodega/Vender.wsdl"/>
+    <system systemId="http://localhost:8080/servicio_bodega/Vender?xsd=1" uri="src/conf/xml-resources/web-service-references/Vender/wsdl/localhost_8080/servicio_bodega/Vender.xsd_1.xsd"/>
     <system systemId="http://localhost:8080/servicio_bodega/ServiciosAdmin?wsdl" uri="src/conf/xml-resources/web-service-references/ServiciosAdmin/wsdl/localhost_8080/servicio_bodega/ServiciosAdmin.wsdl"/>
     <system systemId="http://localhost:8080/servicio_bodega/ServiciosAdmin?xsd=1" uri="src/conf/xml-resources/web-service-references/ServiciosAdmin/wsdl/localhost_8080/servicio_bodega/ServiciosAdmin.xsd_1.xsd"/>
 </catalog>

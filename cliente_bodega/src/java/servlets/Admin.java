@@ -14,6 +14,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.xml.ws.WebServiceRef;
 import webservice.ServiciosAdmin_Service;
+import webservice.Vender_Service;
 
 /**
  *
@@ -21,6 +22,9 @@ import webservice.ServiciosAdmin_Service;
  */
 @WebServlet(name = "Admin", urlPatterns = {"/Admin"})
 public class Admin extends HttpServlet {
+
+    @WebServiceRef(wsdlLocation = "WEB-INF/wsdl/localhost_8080/servicio_bodega/Vender.wsdl")
+    private Vender_Service service_1;
 
     @WebServiceRef(wsdlLocation = "WEB-INF/wsdl/localhost_8080/servicio_bodega/ServiciosAdmin.wsdl")
     private ServiciosAdmin_Service service;
@@ -115,6 +119,13 @@ public class Admin extends HttpServlet {
         // If the calling of port operations may lead to race condition some synchronization is required.
         webservice.ServiciosAdmin port = service.getServiciosAdminPort();
         return port.actualizarPrecio(idProd, precio);
+    }
+
+    private String venderProducto(java.lang.String producto, java.lang.String bodega, int cantidad) {
+        // Note that the injected javax.xml.ws.Service reference as well as port objects are not thread safe.
+        // If the calling of port operations may lead to race condition some synchronization is required.
+        webservice.Vender port = service_1.getVenderPort();
+        return port.venderProducto(producto, bodega, cantidad);
     }
 
 }

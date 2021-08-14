@@ -25,5 +25,9 @@ public class Borrar {
        DetalleProvider x=new DetalleProvider();
        List<Detalle> a= x.listadoProductosBodega("1");
         System.out.println(a.get(0).getIdprod());
+        //vender
+        System.out.println("VENDER");
+        VenderProductos v = new VenderProductos();
+        v.venderProducto("LSD", "QUITO", 2);
     }
 }

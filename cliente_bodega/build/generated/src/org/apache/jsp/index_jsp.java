@@ -54,13 +54,13 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("    </head>\r\n");
       out.write("    <body>\r\n");
       out.write("        \r\n");
-      out.write("        <div class=\"contenedor\">\r\n");
+      out.write("        <header class=\"contenedor\">\r\n");
       out.write("            <nav class=\"navegacion\">\r\n");
       out.write("                <p>\r\n");
       out.write("                  Bienvenido al inicio de AOS BODEGAS  \r\n");
       out.write("                </p>\r\n");
       out.write("            </nav>\r\n");
-      out.write("        </div>\r\n");
+      out.write("        </header>\r\n");
       out.write("        \r\n");
       out.write("        \r\n");
       out.write("        <div class=\"container mt-5\">\r\n");

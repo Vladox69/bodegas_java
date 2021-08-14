@@ -75,7 +75,7 @@ public class Admin implements BodegaInt, ProductoInt{
             conexion = conn.getConexion();
             int cant = oldCant(idPro, idBod);
             int newCant = cant + cantidad;
-            String update1 = "UPDATE detalle_bodega set cantidad=? where idbod="+idBod+" and idprod="+idPro;
+            String update1 = "UPDATE detalle_bodega set cantidad=?, estado='S' where idbod="+idBod+" and idprod="+idPro;
             ps = conexion.prepareStatement(update1);
             ps.setString(1, String.valueOf(newCant));
             int res = ps.executeUpdate();

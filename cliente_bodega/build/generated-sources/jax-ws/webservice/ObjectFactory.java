@@ -131,6 +131,14 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link Producto }
+     * 
+     */
+    public Producto createProducto() {
+        return new Producto();
+    }
+
+    /**
      * Create an instance of {@link DetalleAdmin }
      * 
      */
@@ -144,14 +152,6 @@ public class ObjectFactory {
      */
     public Detalle createDetalle() {
         return new Detalle();
-    }
-
-    /**
-     * Create an instance of {@link Producto }
-     * 
-     */
-    public Producto createProducto() {
-        return new Producto();
     }
 
     /**

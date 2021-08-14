@@ -27,27 +27,6 @@ public interface ServiciosAdmin {
 
     /**
      * 
-     * @param idPro
-     * @param idBod
-     * @param cantidad
-     * @return
-     *     returns java.lang.String
-     */
-    @WebMethod(operationName = "ActualizarCantidad")
-    @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "ActualizarCantidad", targetNamespace = "http://webservice/", className = "webservice.ActualizarCantidad")
-    @ResponseWrapper(localName = "ActualizarCantidadResponse", targetNamespace = "http://webservice/", className = "webservice.ActualizarCantidadResponse")
-    @Action(input = "http://webservice/ServiciosAdmin/ActualizarCantidadRequest", output = "http://webservice/ServiciosAdmin/ActualizarCantidadResponse")
-    public String actualizarCantidad(
-        @WebParam(name = "idPro", targetNamespace = "")
-        String idPro,
-        @WebParam(name = "idBod", targetNamespace = "")
-        String idBod,
-        @WebParam(name = "cantidad", targetNamespace = "")
-        int cantidad);
-
-    /**
-     * 
      * @param precio
      * @param idProd
      * @return
@@ -79,6 +58,18 @@ public interface ServiciosAdmin {
     /**
      * 
      * @return
+     *     returns java.util.List<webservice.Producto>
+     */
+    @WebMethod
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "productos", targetNamespace = "http://webservice/", className = "webservice.Productos")
+    @ResponseWrapper(localName = "productosResponse", targetNamespace = "http://webservice/", className = "webservice.ProductosResponse")
+    @Action(input = "http://webservice/ServiciosAdmin/productosRequest", output = "http://webservice/ServiciosAdmin/productosResponse")
+    public List<Producto> productos();
+
+    /**
+     * 
+     * @return
      *     returns java.util.List<webservice.DetalleAdmin>
      */
     @WebMethod
@@ -90,14 +81,23 @@ public interface ServiciosAdmin {
 
     /**
      * 
+     * @param idPro
+     * @param idBod
+     * @param cantidad
      * @return
-     *     returns java.util.List<webservice.Producto>
+     *     returns java.lang.String
      */
-    @WebMethod
+    @WebMethod(operationName = "ActualizarCantidad")
     @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "productos", targetNamespace = "http://webservice/", className = "webservice.Productos")
-    @ResponseWrapper(localName = "productosResponse", targetNamespace = "http://webservice/", className = "webservice.ProductosResponse")
-    @Action(input = "http://webservice/ServiciosAdmin/productosRequest", output = "http://webservice/ServiciosAdmin/productosResponse")
-    public List<Producto> productos();
+    @RequestWrapper(localName = "ActualizarCantidad", targetNamespace = "http://webservice/", className = "webservice.ActualizarCantidad")
+    @ResponseWrapper(localName = "ActualizarCantidadResponse", targetNamespace = "http://webservice/", className = "webservice.ActualizarCantidadResponse")
+    @Action(input = "http://webservice/ServiciosAdmin/ActualizarCantidadRequest", output = "http://webservice/ServiciosAdmin/ActualizarCantidadResponse")
+    public String actualizarCantidad(
+        @WebParam(name = "idPro", targetNamespace = "")
+        String idPro,
+        @WebParam(name = "idBod", targetNamespace = "")
+        String idBod,
+        @WebParam(name = "cantidad", targetNamespace = "")
+        int cantidad);
 
 }
