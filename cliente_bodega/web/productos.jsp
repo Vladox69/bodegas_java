@@ -62,7 +62,7 @@
                     <td><b>NOMBRE</b></td>
                     <td><b>CIUDAD</b></td>
                     <td><b>CANTIDAD</b></td>
-                    <td><b>ESTADO</b></td>
+                    <td><b>PRECIO</b></td>
                 </tr>
             </table>
             

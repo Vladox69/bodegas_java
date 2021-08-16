@@ -48,7 +48,7 @@
                     <td><b>NOMBRE</b></td>
                     <td><b>CIUDAD</b></td>
                     <td><b>CANTIDAD</b></td>
-                    <td><b>ESTADO</b></td>
+                    <td><b>PRECIO</b></td>
                 </tr>
                 <%
                     DetalleM detalleM = new DetalleM();
@@ -70,8 +70,8 @@
             <div class="actualizar">
                 <h2>Vender Producto</h2>
                 <form action="VenderProducto" method="post" id="formulario">
-                    <label for="">Bodegas: </label>
-                    <select id="ciud" name="ciudad">
+                   <!--  <label for="">Bodegas: </label>
+                   <select id="ciud" name="ciudad">
                         <option value disabled selected>
                             Selecciona una ciudad</option>
                             <%
@@ -82,7 +82,7 @@
                         <option value="<%= p.getCiudad()%>"><%= p.getCiudad()%></option>
                         <% } %>
                     </select>
-
+                   -->
                     <br>
                     <label for="Admin" >Producto: </label>
                     <select id="prod" name="producto">

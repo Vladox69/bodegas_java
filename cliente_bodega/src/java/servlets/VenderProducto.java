@@ -12,8 +12,10 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import javax.xml.ws.WebServiceRef;
 import webservice.Vender_Service;
+import webservices.Usuario;
 
 /**
  *
@@ -39,8 +41,17 @@ public class VenderProducto extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
             /* TODO output your page here. You may use following sample code. */
+            HttpSession sesion = request.getSession();
+             Usuario u = (Usuario) sesion.getAttribute("usuarioValido");
             String prod = request.getParameter("producto");
-            String bod = request.getParameter("ciudad");
+            String bod ="";
+            if(u.getIdbod().equals("1")){
+                bod="GUAYAQUIL";
+            }else if(u.getIdbod().equals("2")){
+                 bod="QUITO";
+            }else{
+                 bod="CUENCA";
+            }
             int cant = Integer.parseInt(request.getParameter("cantidad"));
             venderProducto(prod, bod, cant);
             request.getRequestDispatcher("inicio.jsp").forward(request, response);

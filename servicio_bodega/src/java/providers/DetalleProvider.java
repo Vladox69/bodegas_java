@@ -75,7 +75,7 @@ public class DetalleProvider implements DetalleInt {
     @Override
     public List listadoProductoBuscado(String idprod) {
          List<Detalle> detalles_productos = new ArrayList<>();
-        String sql = "SELECT p.nombre, d.cantidad, b.ciudad,d.estado "
+        String sql = "SELECT p.nombre, d.cantidad, b.ciudad,p.precio "
                 + "FROM bodega as b, producto as p, detalle_bodega as d "
                 + "where p.nombre='"+idprod+"' and b.id=d.idbod and p.id=d.idprod and d.estado='s' order by p.nombre";
         try {
@@ -87,7 +87,7 @@ public class DetalleProvider implements DetalleInt {
                 detalle.setIdbod(result.getString("ciudad"));
                 detalle.setIdprod(result.getString("nombre"));
                 detalle.setCantidad(result.getString("cantidad"));
-                detalle.setEstado(result.getString("estado"));
+                detalle.setEstado(result.getString("precio"));
                 detalles_productos.add(detalle);
             }
         } catch (SQLException ex) {
@@ -99,7 +99,7 @@ public class DetalleProvider implements DetalleInt {
     @Override
     public List listadoProductosBodega(String idbod) {
           List<Detalle> detalles_bodega = new ArrayList<>();
-        String sql = "SELECT p.nombre, b.ciudad, db.cantidad, db.estado \n"
+        String sql = "SELECT p.nombre, b.ciudad, db.cantidad, p.precio \n"
                             + "FROM detalle_bodega db INNER JOIN bodega b ON db.idbod=b.id "
                             + "INNER JOIN producto p ON db.idprod=p.id where estado='S' and idbod='"+idbod+"'";
         try {
@@ -111,7 +111,7 @@ public class DetalleProvider implements DetalleInt {
                 detalle.setIdbod(result.getString("ciudad"));
                 detalle.setIdprod(result.getString("nombre"));
                 detalle.setCantidad(result.getString("cantidad"));
-                detalle.setEstado(result.getString("estado"));
+                detalle.setEstado(result.getString("precio"));
                 detalles_bodega.add(detalle);
             }
         } catch (SQLException ex) {
