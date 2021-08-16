@@ -16,5 +16,11 @@ public class DetalleM {
         webservice.ServicioDetalle port = service.getServicioDetallePort();
         return port.detalleBodega(idbod);
     }
+
+    public  java.util.List<webservice.Detalle> productoBuscado(java.lang.String idprod) {
+        webservice.ServicioDetalle_Service service = new webservice.ServicioDetalle_Service();
+        webservice.ServicioDetalle port = service.getServicioDetallePort();
+        return port.productoBuscado(idprod);
+    }
     
 }

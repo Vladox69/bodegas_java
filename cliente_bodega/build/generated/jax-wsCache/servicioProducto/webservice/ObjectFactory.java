@@ -95,8 +95,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link Listar }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link Listar }{@code >}
      * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link Listar }{@code >}
      */
     @XmlElementDecl(namespace = "http://webservice/", name = "Listar")
     public JAXBElement<Listar> createListar(Listar value) {
@@ -104,8 +108,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link ListarResponse }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link ListarResponse }{@code >}
      * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link ListarResponse }{@code >}
      */
     @XmlElementDecl(namespace = "http://webservice/", name = "ListarResponse")
     public JAXBElement<ListarResponse> createListarResponse(ListarResponse value) {
@@ -113,8 +121,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link BuscarProducto }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link BuscarProducto }{@code >}
      * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link BuscarProducto }{@code >}
      */
     @XmlElementDecl(namespace = "http://webservice/", name = "buscarProducto")
     public JAXBElement<BuscarProducto> createBuscarProducto(BuscarProducto value) {
@@ -122,8 +134,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link BuscarProductoResponse }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link BuscarProductoResponse }{@code >}
      * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link BuscarProductoResponse }{@code >}
      */
     @XmlElementDecl(namespace = "http://webservice/", name = "buscarProductoResponse")
     public JAXBElement<BuscarProductoResponse> createBuscarProductoResponse(BuscarProductoResponse value) {
@@ -131,8 +147,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link Hello }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link Hello }{@code >}
      * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link Hello }{@code >}
      */
     @XmlElementDecl(namespace = "http://webservice/", name = "hello")
     public JAXBElement<Hello> createHello(Hello value) {
@@ -140,8 +160,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link HelloResponse }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link HelloResponse }{@code >}
      * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link HelloResponse }{@code >}
      */
     @XmlElementDecl(namespace = "http://webservice/", name = "helloResponse")
     public JAXBElement<HelloResponse> createHelloResponse(HelloResponse value) {

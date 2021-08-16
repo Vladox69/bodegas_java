@@ -75,15 +75,17 @@ public class DetalleProvider implements DetalleInt {
     @Override
     public List listadoProductoBuscado(String idprod) {
          List<Detalle> detalles_productos = new ArrayList<>();
-        String sql = "select * from detalle_bodega where estado='S' and idprod='"+idprod+"'";
+        String sql = "SELECT p.nombre, d.cantidad, b.ciudad,d.estado "
+                + "FROM bodega as b, producto as p, detalle_bodega as d "
+                + "where p.nombre='"+idprod+"' and b.id=d.idbod and p.id=d.idprod and d.estado='s' order by p.nombre";
         try {
             conexion = conn.getConexion();
             prepared = (PreparedStatement) conexion.prepareStatement(sql);
             result = prepared.executeQuery();
             while (result.next()) {
                 Detalle detalle = new Detalle();
-                detalle.setIdbod(result.getString("idbod"));
-                detalle.setIdprod(result.getString("idprod"));
+                detalle.setIdbod(result.getString("ciudad"));
+                detalle.setIdprod(result.getString("nombre"));
                 detalle.setCantidad(result.getString("cantidad"));
                 detalle.setEstado(result.getString("estado"));
                 detalles_productos.add(detalle);

@@ -4,9 +4,17 @@
         <servlet-name>TablaB</servlet-name>
         <servlet-class>servlets.TablaB</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>Buscado</servlet-name>
+        <servlet-class>servlets.Buscado</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>TablaB</servlet-name>
         <url-pattern>/TablaB</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Buscado</servlet-name>
+        <url-pattern>/Buscado</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

@@ -7,9 +7,9 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Java class for ProductoBuscado complex type.
+ * <p>Clase Java para ProductoBuscado complex type.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
+ * <p>El siguiente fragmento de esquema especifica el contenido que se espera que haya en esta clase.
  * 
  * <pre>
  * &lt;complexType name="ProductoBuscado"&gt;
@@ -34,7 +34,7 @@ public class ProductoBuscado {
     protected String idprod;
 
     /**
-     * Gets the value of the idprod property.
+     * Obtiene el valor de la propiedad idprod.
      * 
      * @return
      *     possible object is
@@ -46,7 +46,7 @@ public class ProductoBuscado {
     }
 
     /**
-     * Sets the value of the idprod property.
+     * Define el valor de la propiedad idprod.
      * 
      * @param value
      *     allowed object is

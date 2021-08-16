@@ -51,7 +51,7 @@ public class pruebas {
         
         
         DetalleProvider y = new DetalleProvider();
-        ArrayList d = (ArrayList) y.listarDetalle();
+        /*ArrayList d = (ArrayList) y.listarDetalle();
         System.out.println("Listar detalle general");
         for (int i = 0; i < d.size(); i++) {
             System.out.println(d.get(i).toString());
@@ -69,10 +69,10 @@ public class pruebas {
         System.out.println("Listar detalle por bodega");
         for (int i = 0; i < d3.size(); i++) {
             System.out.println(d3.get(i).toString());
-        }
+        }*/
         
         
-        ArrayList d4 = (ArrayList) y.listadoProductoBuscado("2");
+        ArrayList d4 = (ArrayList) y.listadoProductoBuscado("VELA");
         System.out.println("Listar detalle por producto buscado");
         for (int i = 0; i < d4.size(); i++) {
             System.out.println(d4.get(i).toString());
