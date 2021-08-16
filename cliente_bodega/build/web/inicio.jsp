@@ -22,6 +22,7 @@
     <body>
         <%
             Usuario u = (Usuario) session.getAttribute("usuarioValido");
+            if(u.getPerfil().equalsIgnoreCase("admin")){
         %>
         <header class="contenedor">
             <nav class="navegacion">
@@ -31,7 +32,15 @@
                 <a href="Navegacion?accion=cerrar">Cerrar sesión</a>
             </nav>
         </header>
-
+        <%}else{%>
+        <header class="contenedor">
+            <nav class="navegacion">
+                <a href="Navegacion?accion=inicio">Inicio</a>
+                <a href="Navegacion?accion=producto">Producto</a>
+                <a href="Navegacion?accion=cerrar">Cerrar sesión</a>
+            </nav>
+        </header>
+        <%}%>
         <main>
             <h1>Inicio</h1>
             <table>
@@ -59,7 +68,7 @@
             <!--VENDER PRODUCTO-->
             <!-- Actualizar cantidad -->
             <div class="actualizar">
-                <h2>Actualizar Cantidad</h2>
+                <h2>Vender Producto</h2>
                 <form action="VenderProducto" method="post" id="formulario">
                     <label for="">Bodegas: </label>
                     <select id="ciud" name="ciudad">

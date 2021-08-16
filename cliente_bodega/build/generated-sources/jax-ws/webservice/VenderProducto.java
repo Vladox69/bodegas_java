@@ -7,9 +7,9 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Clase Java para VenderProducto complex type.
+ * <p>Java class for VenderProducto complex type.
  * 
- * <p>El siguiente fragmento de esquema especifica el contenido que se espera que haya en esta clase.
+ * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
  * &lt;complexType name="VenderProducto"&gt;
@@ -40,7 +40,7 @@ public class VenderProducto {
     protected int cantidad;
 
     /**
-     * Obtiene el valor de la propiedad producto.
+     * Gets the value of the producto property.
      * 
      * @return
      *     possible object is
@@ -52,7 +52,7 @@ public class VenderProducto {
     }
 
     /**
-     * Define el valor de la propiedad producto.
+     * Sets the value of the producto property.
      * 
      * @param value
      *     allowed object is
@@ -64,7 +64,7 @@ public class VenderProducto {
     }
 
     /**
-     * Obtiene el valor de la propiedad bodega.
+     * Gets the value of the bodega property.
      * 
      * @return
      *     possible object is
@@ -76,7 +76,7 @@ public class VenderProducto {
     }
 
     /**
-     * Define el valor de la propiedad bodega.
+     * Sets the value of the bodega property.
      * 
      * @param value
      *     allowed object is
@@ -88,7 +88,7 @@ public class VenderProducto {
     }
 
     /**
-     * Obtiene el valor de la propiedad cantidad.
+     * Gets the value of the cantidad property.
      * 
      */
     public int getCantidad() {
@@ -96,7 +96,7 @@ public class VenderProducto {
     }
 
     /**
-     * Define el valor de la propiedad cantidad.
+     * Sets the value of the cantidad property.
      * 
      */
     public void setCantidad(int value) {

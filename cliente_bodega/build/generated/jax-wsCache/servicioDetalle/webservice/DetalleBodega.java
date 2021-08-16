@@ -7,9 +7,9 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Clase Java para DetalleBodega complex type.
+ * <p>Java class for DetalleBodega complex type.
  * 
- * <p>El siguiente fragmento de esquema especifica el contenido que se espera que haya en esta clase.
+ * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
  * &lt;complexType name="DetalleBodega"&gt;
@@ -34,7 +34,7 @@ public class DetalleBodega {
     protected String idbod;
 
     /**
-     * Obtiene el valor de la propiedad idbod.
+     * Gets the value of the idbod property.
      * 
      * @return
      *     possible object is
@@ -46,7 +46,7 @@ public class DetalleBodega {
     }
 
     /**
-     * Define el valor de la propiedad idbod.
+     * Sets the value of the idbod property.
      * 
      * @param value
      *     allowed object is
